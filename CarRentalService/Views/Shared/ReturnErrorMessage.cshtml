@@ -1,0 +1,27 @@
+﻿@model CarRentalService.Models.RegOfCarRental
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="space-above-1">
+    <div class="card text-white bg-primary mb-5" style="max-width: 80rem;">
+        <div class="card-body">
+            <h2>Return a car</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-7 card-text">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   <div>
+         <a asp-action="Create" asp>Back to return form</a>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

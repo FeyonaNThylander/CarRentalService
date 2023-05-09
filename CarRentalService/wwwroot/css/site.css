@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.space-above {
+    padding-top: 12rem !important;
+}
+
+.space-above-1 {
+    padding-top: 8rem !important;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url('../images/dan-wood-4bo2l5txvte-unsplash.jpg');
+    /*  background-image: url('../images/grant-porter-o7qk1vqy3p0-unsplash.jpg');
+    background-image: url('../images/jamie-street-jtp_dqtz6d8-unsplash.jpg');
+    background-image: url('../images/khamkeo-vilaysing-hd9p-xw2pee-unsplash.jpg');*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,48 @@
+﻿@model CarRentalService.Models.RegOfCarReturn
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="space-above-1">
+    <div class="card text-white bg-primary mb-5" style="max-width: 80rem;">
+        <div class="card-body">
+            <h2>Return a car</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-6 card-text">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="BookingNumber" class="control-label">BOOKING NUMBER</label>
+                            <input asp-for="BookingNumber" class="form-control" />
+                            <span asp-validation-for="BookingNumber" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="DateOfReturn" class="control-label">RETURN DATE</label>
+                            <input asp-for="DateOfReturn" class="form-control" />
+                            <span asp-validation-for="DateOfReturn" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="CurrentMileage" class="control-label">CURRENT MILEAGE (KM)</label>
+                            <input asp-for="CurrentMileage" class="form-control" />
+                            <span asp-validation-for="CurrentMileage" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Calculate payment" class="btn btn-outline-success" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

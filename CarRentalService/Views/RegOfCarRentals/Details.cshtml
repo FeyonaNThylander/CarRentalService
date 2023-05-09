@@ -1,0 +1,56 @@
+﻿@model CarRentalService.Models.RegOfCarRental
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="space-above-1">
+    <div class="card text-white bg-primary mb-5" style="max-width: 75rem;">
+        <div class="card-body">
+            <h2 class="card-title">Car Rental - Details</h2>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    <p class="card-text">BOOKING NUMBER</p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.BookingNumber) 
+                </dd>
+                <dt class="col-sm-2">
+                    <p class="card-text">REG. NUMBER</p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.RegistrationNumber)
+                </dd>
+                <dt class="col-sm-2">
+                    <p class="card-text">CUSTOMER ID</p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CustomerId)
+                </dd>
+                <dt class="col-sm-2">
+                    <p class="card-text">CAR CATEGORY</p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarCategory)
+                </dd>
+                <dt class="col-sm-2">
+                    <p class="card-text">DATE OF RENTAL</p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DateOfRental)
+                </dd>
+                <dt class="col-sm-2">
+                    <p class="card-text">CURRENT MILEAGE </p>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CurrentMileage) km
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

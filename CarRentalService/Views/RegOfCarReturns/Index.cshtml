@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CarRentalService.Models.RegOfCarReturn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="space-above-1">
+    <h1>List of all returned cars</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th scope="row">
+                    Booking number
+                </th>
+                <th>
+                    Date of return
+                </th>
+                <th>
+                    Current mileage (km)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="table-primary">
+                    <td>
+                        @Html.DisplayFor(model => item.BookingNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DateOfReturn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.CurrentMileage)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

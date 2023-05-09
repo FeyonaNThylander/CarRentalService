@@ -1,0 +1,64 @@
+﻿@model CarRentalService.Models.RegOfCarRental
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="space-above-1">
+    <div class="card text-white bg-primary mb-5" style="max-width: 80rem;">
+        <div class="card-body">
+            <h2>Rent a car</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-7">
+                    <form asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="BookingNumber" class="control-label">BOOKING NUMBER</label>
+                            <input asp-for="BookingNumber" class="form-control" placeholder="ex. 1" />
+                            <span asp-validation-for="BookingNumber" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="RegistrationNumber" class="form-label mt-4">REGISTRATION NUMBER</label>
+                            <input asp-for="RegistrationNumber" class="form-control" placeholder="ex. ABC123" />
+                            <span asp-validation-for="RegistrationNumber" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="CustomerId" class="form-label mt-4">CUSTOMER ID</label>
+                            <input asp-for="CustomerId" class="form-control" placeholder="YY-MM-DD" />
+                            <span asp-validation-for="CustomerId" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="CarCategory" class="form-label mt-4">CAR CATEGORY</label>
+                            <select asp-for="CarCategory" asp-items="new SelectList(ViewBag.CarCategories)" class="form-select" id="exampleSelect1"></select>
+                            <span asp-validation-for="CarCategory" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="DateOfRental" class="form-label mt-4">RENTAL START DATE</label>
+                            <input asp-for="DateOfRental" class="form-control" />
+                            <span asp-validation-for="DateOfRental" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="CurrentMileage" class="form-label mt-4l">CURRENT MILEAGE (KM)</label>
+                            <input asp-for="CurrentMileage" class="form-control" placeholder="ex. 45678" />
+                            <span asp-validation-for="CurrentMileage" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Rent car" class="btn btn-outline-success" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
